@@ -11,13 +11,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930033534) do
+ActiveRecord::Schema.define(:version => 20121009162940) do
+
+  create_table "authors", :force => true do |t|
+    t.string   "name"
+    t.string   "department"
+    t.string   "class"
+    t.integer  "stunum"
+    t.string   "phone"
+    t.string   "mail"
+    t.integer  "credit"
+    t.integer  "grade"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "department"
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "author1"
+    t.integer  "author2"
+    t.integer  "author3"
+    t.integer  "author4"
+    t.string   "professor"
+    t.string   "status"
+    t.string   "prize"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string   "utype"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"

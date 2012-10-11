@@ -1,7 +1,11 @@
 ThusastSrt::Application.routes.draw do
+  resources :authors
+
+  resources :projects
+
   devise_for :users
 
-  root :to => "home#index"
+  root :to => "projects#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

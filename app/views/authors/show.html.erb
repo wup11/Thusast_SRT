@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @author.name %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @author.department %>
+</p>
+
+<p>
+  <b>Class:</b>
+  <%= @author.class %>
+</p>
+
+<p>
+  <b>Stunum:</b>
+  <%= @author.stunum %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @author.phone %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @author.mail %>
+</p>
+
+<p>
+  <b>Credit:</b>
+  <%= @author.credit %>
+</p>
+
+<p>
+  <b>Grade:</b>
+  <%= @author.grade %>
+</p>
+
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>
