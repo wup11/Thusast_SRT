@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-ThusastSrt::Application.config.secret_token = '2eca4f4bda2257442f2d75eb43ba35ac3b18067b1649a9bc8d46b313e6fba2d0ef2d2dd978c12a4cd0101e9627426a90d21641f3a3524c324c99724de1a09027'
+ThusastSrt::Application.config.secret_token = '3ba7432d3e4ce9fd075bb67cf4c3424b004036c196e0f915d35415cf9a60009a2976ac27fa68b24a51a099f7533a7ff25c795cca13374295d55266f4f58a4bd8'

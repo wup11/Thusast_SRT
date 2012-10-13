@@ -1,3 +1,5 @@
 class Author < ActiveRecord::Base
-  attr_accessible :class, :credit, :department, :grade, :mail, :name, :phone, :stunum
+  attr_accessible :authorname, :class_name, :credit, :department, :grade, :mail, :phone, :project_id, :stunum, :user_id
+  belongs_to :user
+  belongs_to :project
 end

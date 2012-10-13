@@ -25,7 +25,24 @@ class ApplicationController < ActionController::Base
   end
 
   def isSAST? id
-    (3..50).include? id or isAdmin? id
+    ((3..50).).include? id
   end
   
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

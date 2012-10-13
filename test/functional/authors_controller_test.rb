@@ -18,7 +18,7 @@ class AuthorsControllerTest < ActionController::TestCase
 
   test "should create author" do
     assert_difference('Author.count') do
-      post :create, author: { class: @author.class, credit: @author.credit, department: @author.department, grade: @author.grade, mail: @author.mail, name: @author.name, phone: @author.phone, stunum: @author.stunum }
+      post :create, author: { authorname: @author.authorname, class_name: @author.class_name, credit: @author.credit, department: @author.department, grade: @author.grade, mail: @author.mail, phone: @author.phone, project_id: @author.project_id, stunum: @author.stunum, user_id: @author.user_id }
     end
 
     assert_redirected_to author_path(assigns(:author))
@@ -35,7 +35,7 @@ class AuthorsControllerTest < ActionController::TestCase
   end
 
   test "should update author" do
-    put :update, id: @author, author: { class: @author.class, credit: @author.credit, department: @author.department, grade: @author.grade, mail: @author.mail, name: @author.name, phone: @author.phone, stunum: @author.stunum }
+    put :update, id: @author, author: { authorname: @author.authorname, class_name: @author.class_name, credit: @author.credit, department: @author.department, grade: @author.grade, mail: @author.mail, phone: @author.phone, project_id: @author.project_id, stunum: @author.stunum, user_id: @author.user_id }
     assert_redirected_to author_path(assigns(:author))
   end
 

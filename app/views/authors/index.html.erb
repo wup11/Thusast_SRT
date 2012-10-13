@@ -2,14 +2,16 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Authorname</th>
     <th>Department</th>
-    <th>Class</th>
-    <th>Stunum</th>
-    <th>Phone</th>
+    <th>Class name</th>
     <th>Mail</th>
-    <th>Credit</th>
+    <th>Phone</th>
+    <th>Stunum</th>
     <th>Grade</th>
+    <th>Credit</th>
+    <th>User</th>
+    <th>Project</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,14 +19,16 @@
 
 <% @authors.each do |author| %>
   <tr>
-    <td><%= author.name %></td>
+    <td><%= author.authorname %></td>
     <td><%= author.department %></td>
-    <td><%= author.class %></td>
-    <td><%= author.stunum %></td>
-    <td><%= author.phone %></td>
+    <td><%= author.class_name %></td>
     <td><%= author.mail %></td>
-    <td><%= author.credit %></td>
+    <td><%= author.phone %></td>
+    <td><%= author.stunum %></td>
     <td><%= author.grade %></td>
+    <td><%= author.credit %></td>
+    <td><%= author.user_id %></td>
+    <td><%= author.project_id %></td>
     <td><%= link_to 'Show', author %></td>
     <td><%= link_to 'Edit', edit_author_path(author) %></td>
     <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>

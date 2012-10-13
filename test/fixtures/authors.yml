@@ -1,21 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  authorname: MyString
   department: MyString
-  class: MyString
-  stunum: 1
-  phone: MyString
+  class_name: MyString
   mail: MyString
-  credit: 1
-  grade: 1
+  phone: MyString
+  stunum: MyString
+  grade: MyString
+  credit: MyString
+  user_id: 1
+  project_id: 1
 
 two:
-  name: MyString
+  authorname: MyString
   department: MyString
-  class: MyString
-  stunum: 1
-  phone: MyString
+  class_name: MyString
   mail: MyString
-  credit: 1
-  grade: 1
+  phone: MyString
+  stunum: MyString
+  grade: MyString
+  credit: MyString
+  user_id: 1
+  project_id: 1

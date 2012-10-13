@@ -12,36 +12,44 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :authorname %><br />
+    <%= f.text_field :authorname %>
   </div>
   <div class="field">
     <%= f.label :department %><br />
     <%= f.text_field :department %>
   </div>
   <div class="field">
-    <%= f.label :class %><br />
-    <%= f.text_field :class %>
-  </div>
-  <div class="field">
-    <%= f.label :stunum %><br />
-    <%= f.number_field :stunum %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.label :class_name %><br />
+    <%= f.text_field :class_name %>
   </div>
   <div class="field">
     <%= f.label :mail %><br />
     <%= f.text_field :mail %>
   </div>
   <div class="field">
-    <%= f.label :credit %><br />
-    <%= f.number_field :credit %>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :stunum %><br />
+    <%= f.text_field :stunum %>
   </div>
   <div class="field">
     <%= f.label :grade %><br />
-    <%= f.number_field :grade %>
+    <%= f.text_field :grade %>
+  </div>
+  <div class="field">
+    <%= f.label :credit %><br />
+    <%= f.text_field :credit %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.number_field :project_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
