@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class AttachmentsController < ApplicationController
   # GET /attachments
   # GET /attachments.json
@@ -86,8 +87,12 @@ class AttachmentsController < ApplicationController
   end
   
   def download
-    filename = (Attachment.find params[:id]).filename
-    send_file File.open pick_up_file filename
+    if !has_ownership? params[:id].to_i
+      redirect_to :root, :notice => "无权限，自粽！！！"
+      return
+    end
+    attachment = Attachment.find params[:id]
+    send_file File.open pick_up_file attachment.user.id,attachment.filename
     return 
   end
   
@@ -100,7 +105,11 @@ class AttachmentsController < ApplicationController
     end
   end
   
-  def pick_up_file file_name
-    Rails.root.to_s+"/upload_files/#{current_user.id}/#{file_name}"
+  def pick_up_file owner_id, file_name
+    Rails.root.to_s+"/upload_files/#{owner_id}/#{file_name}"
+  end
+  
+  def has_ownership? attachment_id
+    current_user.attachments.collect{|c| c.id}.include? attachment_id or current_user.isAdmin?
   end
 end
