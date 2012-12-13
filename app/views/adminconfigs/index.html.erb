@@ -1,0 +1,30 @@
+<div class="container">
+<div class="bs-docs-example">
+<h1>设置</h1>
+ <table class="table table-striped">
+  <tr>
+    <th>名称</th>
+    <th>值</th>
+    <th></th>
+  </tr>
+<% @adminconfigs.each do |adminconfig| %>
+  <tr>
+    <td><%= adminconfig.key %></td>
+    <td><%= adminconfig.value %></td>
+    <td><%= link_to '修改', edit_adminconfig_path(adminconfig) %></td>
+  </tr>
+<% end %>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+</table>
+</div>
+<hr>
+
+      <footer>
+        <p>&copy; Thusast 2012</p>
+      </footer>
+
+</div> <!-- /container -->

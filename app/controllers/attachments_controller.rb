@@ -2,8 +2,11 @@
 class AttachmentsController < ApplicationController
   # GET /attachments
   # GET /attachments.json
+  before_filter :authenticate_user!
+  before_filter :available?
+  
   def index
-    @attachments = current_user.isAdmin? ? (Attachment.all) : (Attachment.where :user_id => current_user.id)
+    @attachments = current_user.isAdmin? ? (Attachment.all) : (Attachment.where :user_id => [current_user.id, 1])
     
     respond_to do |format|
       format.html # index.html.erb
@@ -78,6 +81,10 @@ class AttachmentsController < ApplicationController
   # DELETE /attachments/1.json
   def destroy
     @attachment = Attachment.find(params[:id])
+    if !has_delete_auth? params[:id].to_i
+      redirect_to :back, :notice => "无权限，自粽！！！"
+      return
+    end
     @attachment.destroy
 
     respond_to do |format|
@@ -88,7 +95,7 @@ class AttachmentsController < ApplicationController
   
   def download
     if !has_ownership? params[:id].to_i
-      redirect_to :root, :notice => "无权限，自粽！！！"
+      redirect_to :back, :notice => "无权限，自粽！！！"
       return
     end
     attachment = Attachment.find params[:id]
@@ -110,6 +117,19 @@ class AttachmentsController < ApplicationController
   end
   
   def has_ownership? attachment_id
-    current_user.attachments.collect{|c| c.id}.include? attachment_id or current_user.isAdmin?
+    current_user.attachments.collect{|c| c.id}.include? attachment_id or current_user.isAdmin? or (Attachment.find attachment_id).user.isAdmin?
+  end
+  
+  def has_delete_auth? attachment_id
+    current_user.attachments.collect{|c| c.id}.include? attachment_id
+  end
+
+  def available?
+    avail = Adminconfig.where(:key => "available")
+    if avail[0].value != "true"
+      if !current_user.isAdmin?
+        redirect_to :root
+      end
+    end
   end
 end

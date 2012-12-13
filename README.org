@@ -1,0 +1,28 @@
+#+TITLE:     自动化部署脚本使用说明
+#+AUTHOR:    Asakawa Ryu
+#+EMAIL:     Asakawa Ryu <ryua775@gmail.com>
+#+DATE:      2012-10-26 Fri
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  cn
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:nil LaTeX:nil skip:nil d:nil todo:nil pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+复制压缩包内的 ~auto_deploy.rb~ 到网站根目录, ~generate_users.rake~ 到 ~lib/tasks/~ 。
+切换到工程目录下
+#+begin_src bash
+cd /path/to/Thusast
+#+end_src
+确认机器上的ruby的版本 >= 1.9.1
+#+begin_src bash
+ruby -v
+#+end_src
+执行自动化部署脚本，等待约30s，终端中会输出自动生成的用户名（中文的院系名称）和密码，第一组为admin的帐号密码。
+#+begin_src bash
+ruby auto_deploy.rb
+#+end_src

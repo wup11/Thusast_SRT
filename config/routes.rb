@@ -2,8 +2,9 @@ ThusastSrt::Application.routes.draw do
   devise_for :users
 
   resources :attachments
+  resources :adminconfigs
   match 'attachments/:id/download' => 'attachments#download', :as => :download_attachment
-  
+  match 'annoncement/:id' => 'home#annoncement', :as => :annoncement
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

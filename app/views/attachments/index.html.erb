@@ -1,9 +1,10 @@
-<h1>Listing attachments</h1>
-
-<table>
+<div class="container">
+<div class="bs-docs-example">
+<h1>项目文件</h1>
+ <table class="table table-striped">
   <tr>
-    <th>Filename</th>
-    <th>User</th>
+    <th>院系</th>
+    <th>文件</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,15 +12,25 @@
 
 <% @attachments.each do |attachment| %>
   <tr>
-    <td><%= attachment.filename %></td>
     <td><%= attachment.user.username %></td>
-    <td><%= link_to 'Show', attachment %></td>
-    <td><%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to 'Download', download_attachment_path(attachment) %></td>
+    <td><%= attachment.filename %></td>
+    <td><%= link_to '查看', attachment %></td>
+    <td><%= link_to '删除', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '下载', download_attachment_path(attachment) %></td>
   </tr>
 <% end %>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="/attachments/new" style="color:blue;">上传文件</a></td>
 </table>
+</div>
+<hr>
 
-<br />
+      <footer>
+        <p>&copy; Thusast 2012</p>
+      </footer>
 
-<%= link_to 'New Attachment', new_attachment_path %>
+</div> <!-- /container -->

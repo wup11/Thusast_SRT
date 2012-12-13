@@ -1,3 +1,0 @@
-class Attachment < ActiveRecord::Base
-  attr_accessible :filename, :user_id
-end

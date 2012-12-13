@@ -1,14 +1,22 @@
+<div class="container">
+<div class="bs-docs-example">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Filename:</b>
+  <b>文件名</b>
   <%= @attachment.filename %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b>用  户</b>
   <%= @attachment.user.username %>
 </p>
 
 
-<%= link_to 'Back', attachments_path %>
+<a href="/attachments">回到列表</a>
+</div>
+      <hr>
+      <footer>
+        <p>&copy; Thusast 2012</p>
+      </footer>
+</div> <!-- /container -->
